@@ -59,6 +59,8 @@ app.post('/api/user/company', (request, response) => {
   response.json(userCompany)
 })
 
+
+// Run Express server
 app.listen( port, () =>{
   console.log(`Listening on port: ${port}`)
 } )
