@@ -44,3 +44,21 @@ const createCompany = () => {
 app.post('/api/companies/new', (request, response) => {
   response.json(createCompany())
 })
+
+// POST route to call createUser AND createCompany when route visited,
+// and add them as key/value pairs to a new object that will become the response.
+app.post('/api/user/company', (request, response) => {
+  user = createUser()
+  company = createCompany()
+
+  userCompany = {
+    user: user,
+    company: company
+  }
+
+  response.json(userCompany)
+})
+
+app.listen( port, () =>{
+  console.log(`Listening on port: ${port}`)
+} )
