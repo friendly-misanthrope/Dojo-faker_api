@@ -40,3 +40,7 @@ const createCompany = () => {
   }
   return newCompany
 }
+// POST route to call createCompany() when route visited
+app.post('/api/companies/new', (request, response) => {
+  response.json(createCompany())
+})
