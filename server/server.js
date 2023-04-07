@@ -19,3 +19,8 @@ const createUser = () => {
   }
   return newUser
 }
+
+// POST route to call createUser() when route visited
+app.post('/api/users/new', (request, response) => {
+  response.json(createUser())
+})
