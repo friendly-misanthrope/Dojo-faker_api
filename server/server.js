@@ -19,8 +19,24 @@ const createUser = () => {
   }
   return newUser
 }
-
 // POST route to call createUser() when route visited
 app.post('/api/users/new', (request, response) => {
   response.json(createUser())
 })
+
+
+// Function to create new company
+const createCompany = () => {
+  const newCompany = {
+    _id: faker.random.numeric(2),
+    name: faker.company.name(),
+    address: {
+      street: faker.address.street(),
+      city: faker.address.city(),
+      state: faker.address.state(),
+      zipCode: faker.address.zipCode(),
+      country: faker.address.country()
+    }
+  }
+  return newCompany
+}
